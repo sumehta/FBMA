@@ -1,14 +1,16 @@
-# FBMA
+# Factorized Bilinear Multi-Aspect Attention (FBMA)
 
 Code for the paper: "[Event Detection using Hierarchical Multi-Aspect Attention](https://dl.acm.org/doi/10.1145/3308558.3313659)" by
 Sneha Mehta, Mohammad Raihanul Islam, Huzefa Rangwala, Naren Ramakrishnan.
 
 The model presented in the paper can be used for general text classification tasks, especially for large texts. Model assigns relative importances to different sentences and different weights to different words in each sentence.
 
+### Setup
+All commands must be run from the project root. The following environment variables can be optionally defined:
 
-## Setup
-
-**Important**: `HOME_DIR` is a shell environment variable that should point to the location of the project home.
+```bash
+export HOME_DIR="project path"
+export PYTHONPATH=$PYTHONPATH:.```
 
 ### Install dependencies
 
@@ -25,15 +27,17 @@ For licensing reasons we cannot make the datasets in the paper available. Your o
 Example record:
 Considering there are two classes:
 
-```baghdad national iraqi news agency nina the armed forces have killed dozens of terrorists including three suicide bombers during repelling an attack by daesh on gonna village in sharqat `<s>` a source in the defense ministry told the national iraqi news agency/ nina that daesh terrorist gangs attacked this morning the military units stationed in the district of sharqat khanokah village where they were addressed and inflicted them heavy losses killing gonna large number of the terrorist enemy including 3 suicide bombers and dismantled 20 explosive devices planted by terrorists to hinder the progress of the armed forces end,0```
+```baghdad national iraqi news agency nina the armed forces have killed dozens of terrorists including three suicide bombers during repelling an attack by daesh on gonna village in sharqat <s> a source in the defense ministry told the national iraqi news agency/ nina that daesh terrorist gangs attacked this morning the military units stationed in the district of sharqat khanokah village where they were addressed and inflicted them heavy losses killing gonna large number of the terrorist enemy including 3 suicide bombers and dismantled 20 explosive devices planted by terrorists to hinder the progress of the armed forces end,0```
 
 
 ### Train Word Embeddings
 
 ```
-python train_word2vec.py --path *path_to_store_embeddings* --data_dir *path_to_processed_data* --dim *embedding_dimension*
+python train_word2vec.py --path <path_to_store_embeddings> \
+--data_dir <path_to_processed_data> \
+--dim <embedding_dimension>
 ```
-Should generate word2vec.100d.<x>k.w2v file, where <x> refers to the vocab size.
+Should generate word2vec.100d.[x]k.w2v file, where [x] refers to the vocab size.
 
 
 ## Training
@@ -41,21 +45,20 @@ Should generate word2vec.100d.<x>k.w2v file, where <x> refers to the vocab size.
 Creates dictionary, trains and saves the model, runs inference on the test set.
 
 ```
-python main.py --data_dir <path_to_processed_data> --emb_path <path_to_word2vec.100d.<x>k.w2v_file> --aspects 16 --epochs 40 --experiment <dataset_name>
-```
+python main.py \
+--data_dir <path_to_processed_data> \
+--emb_path <path_to_word2vec.100d.[x]k.w2v_file> \
+--aspects 16 \
+--epochs 40 \
+--experiment <dataset_name> ```
+
 data_dir should contain `train.csv`, `val.csv` and  `test.csv` files.
 
-### Setup
-All commands must be run from the project root. The following environment variables can be optionally defined:
-```bash
-export HOME_DIR="path to where you want the datasets saved"
-export PYTHONPATH=$PYTHONPATH:.
-```
 
-
+python main.py --data_dir /home/sudo777/mercury/data_merc/english_15/mercury_english_binary --emb_path /home/sudo777/mercury/data_merc/english_15/embeddings/word2vec.100d.37k.w2v --aspects 5 --epochs 5
 ## Monitoring training progress
 
-You can point tensorboard to the training folder (by default it is `--train_dir=./experiments`) to monitor the training
+You can point tensorboard to the training folder (by default it is `--train_dir=./runs`) to monitor the training
 process:
 
 ```bash

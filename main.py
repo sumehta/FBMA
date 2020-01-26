@@ -64,10 +64,8 @@ def main(args):
         model = torch.load(args.pretrained)
         print('Pretrained model loaded.')
 
-    if args.nclass==1: #binary classification
-        criterion = nn.BCELoss()
-    else:
-        criterion = nn.CrossEntropyLoss()
+
+    criterion = nn.CrossEntropyLoss()
 
     if args.cuda:
         model.cuda()

@@ -105,5 +105,5 @@ def evaluate( model, criterion, ev_batcher, epoch, writer, logger, args, mode='E
     logger.info('Recall: {}'.format(np.mean( epoch_rec )))
     logger.info('F1: {}'.format(np.mean( epoch_f1 )))
     logger.info('Acc: {}'.format(np.mean( epoch_acc )))
-    import pdb; pdb.set_trace()
+    # import pdb; pdb.set_trace()
     return total_loss/ev_batcher.num_batches, np.mean(epoch_pre), np.mean(epoch_rec), np.mean(epoch_f1), np.mean( epoch_acc ), epoch_targets, epoch_preds

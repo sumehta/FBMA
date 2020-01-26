@@ -57,14 +57,11 @@ class HierarchicalFBMA(nn.Module):
         in_ = inp.view(-1, inp.size()[-1]) #batch_size*num_sents x num_words
         gru_out_word = self._sent_encoder_gru(in_) #batch_size*num_sents x num_words x hid_dim 229x70x100
         word_mask = ~(inp.view(inp.size(0)*inp.size(1), -1)==0).unsqueeze(1).repeat(1, self.args.aspects, 1)  # mask out 0 padded words 229x num_hopsx num_words
-
         word_attn_weights = self.word_attn(gru_out_word, word_mask) # batch_size*num_sents x attn_hops x num_words 229x10x50
+        word_attn_weights = word_attn_weights * word_mask.float() # batch_size*num_sents x attn_hops x num_words
 
         sent_emb = torch.bmm(word_attn_weights, gru_out_word)
-
         sent_emb = sent_emb.view(in_.size(0), sent_emb.size(1)*sent_emb.size(2))
-
-        # sent_emb = torch.sum(torch.mul(word_attn_weights.unsqueeze(2).repeat(1, 1, gru_out_word.size()[-1]).transpose(2,1), gru_out_word.transpose(2,1)), dim=2)  #224 x 500
         sent_emb = sent_emb.view(inp.size(0), inp.size(1), -1)
 
         gru_out_sent = self._doc_encoder_gru(sent_emb)
@@ -127,7 +124,7 @@ class SentClassifier(nn.Module):
 
 class FBMA(nn.Module):
     """
-    Factorized Bilinear Multi-Aspect Attention Module.
+    Factorized Bilinear Attention Module
     """
     def __init__(self, hidden_dim, num_aspect, bidirectional=True, u_w_dim=32, proj_word=None):
         super(FBMA, self).__init__()
@@ -138,11 +135,10 @@ class FBMA(nn.Module):
         self.Q =  nn.Parameter(torch.Tensor(u_w_dim, num_aspect))
         self.dropout = nn.Dropout(p=0.4)
         self.u_w = nn.Parameter(torch.Tensor(u_w_dim, 1))
+        nn.init.xavier_normal(self.u_w)
         self.softmax_word = nn.Softmax(dim=2)
         self.u_it_W.data.uniform_(-0.1, 0.1)
-        # self.weight_proj_word.data.uniform_(-0.1, 0.1)
         self.u_it_b.data.uniform_(-0.1, 0.1)
-        nn.init.xavier_normal_(self.u_w)
         self.P.data.uniform_(-0.1, 0.1)
         self.Q.data.uniform_(-0.1, 0.1)
 

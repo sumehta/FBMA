@@ -67,7 +67,7 @@ class Batchify(object):
         indices = np.random.permutation(len(data))
         self.data = data[indices]
         self.labels = labels[indices]
-        self.lens = lens
+        self.lens = lens[indices]
         self.num_batches = data.size(0) // bsz
         self.batch_size = bsz
 
