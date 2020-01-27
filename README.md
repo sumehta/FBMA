@@ -8,13 +8,16 @@ The model presented in the paper can be used for general text classification tas
 ### Setup
 All commands must be run from the project root. The following environment variables can be optionally defined:
 
-```bash
+```
+bash
 export HOME_DIR="project path"
-export PYTHONPATH=$PYTHONPATH:.```
+export PYTHONPATH=$PYTHONPATH:.
+```
 
 ### Install dependencies
 
-```bash
+```
+bash
 sudo apt install python3-dev python3-virtualenv
 virtualenv -p python3 --system-site-packages env3
 . env3/bin/activate
@@ -27,7 +30,9 @@ For licensing reasons we cannot make the datasets in the paper available. Your o
 Example record:
 Considering there are two classes:
 
-```baghdad national iraqi news agency nina the armed forces have killed dozens of terrorists including three suicide bombers during repelling an attack by daesh on gonna village in sharqat <s> a source in the defense ministry told the national iraqi news agency/ nina that daesh terrorist gangs attacked this morning the military units stationed in the district of sharqat khanokah village where they were addressed and inflicted them heavy losses killing gonna large number of the terrorist enemy including 3 suicide bombers and dismantled 20 explosive devices planted by terrorists to hinder the progress of the armed forces end,0```
+```
+baghdad national iraqi news agency nina the armed forces have killed dozens of terrorists including three suicide bombers during repelling an attack by daesh on gonna village in sharqat <s> a source in the defense ministry told the national iraqi news agency/ nina that daesh terrorist gangs attacked this morning the military units stationed in the district of sharqat khanokah village where they were addressed and inflicted them heavy losses killing gonna large number of the terrorist enemy including 3 suicide bombers and dismantled 20 explosive devices planted by terrorists to hinder the progress of the armed forces end,0
+```
 
 
 ### Train Word Embeddings
@@ -50,18 +55,17 @@ python main.py \
 --emb_path <path_to_word2vec.100d.[x]k.w2v_file> \
 --aspects 16 \
 --epochs 40 \
---experiment <dataset_name> ```
+--experiment <dataset_name>
+```
 
 data_dir should contain `train.csv`, `val.csv` and  `test.csv` files.
 
-
-python main.py --data_dir /home/sudo777/mercury/data_merc/english_15/mercury_english_binary --emb_path /home/sudo777/mercury/data_merc/english_15/embeddings/word2vec.100d.37k.w2v --aspects 5 --epochs 5
 ## Monitoring training progress
 
-You can point tensorboard to the training folder (by default it is `--train_dir=./runs`) to monitor the training
-process:
+You can point tensorboard to the training folder (by default it is `--train_dir=./runs`) to monitor the training process:
 
-```bash
+```
+bash
 tensorboard --port 6007 --logdir ./runs
 ```
 
