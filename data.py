@@ -101,7 +101,10 @@ class Corpus( object ):
         data = np.zeros((len(df), self.args.max_sent, self.args.max_word), dtype=float)
 
         labels = np.zeros((len(df)), dtype=float)
+
         for idx, record in df.iterrows():
+            labels[ idx ] = int( record['label'] )
+
             words = [sent.split(' ') for sent in record['text'].split('<s>')]
 
             for i, sent in enumerate( words ):
