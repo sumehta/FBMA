@@ -37,8 +37,7 @@ in the defense ministry told the national iraqi news agency/ nina that daesh ter
 this morning the military units stationed in the district of sharqat khanokah village where they
 were addressed and inflicted them heavy losses killing gonna large number of the terrorist enemy
 including 3 suicide bombers and dismantled 20 explosive devices planted by terrorists to hinder
-the progress
-of the armed forces end, 0
+the progress of the armed forces end, 0
 ```
 
 
