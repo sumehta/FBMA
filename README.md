@@ -25,10 +25,10 @@ pip install -r requirements.txt
 ```
 
 ### Dataset Prep
-For licensing reasons we cannot make the datasets in the paper available. Your own data should be prepared as described below. Data should be split into `train.csv`, `val.csv` and `test.csv` files.  Each file should contain tokenized, lemmatized text and the class label. Sentences in the text should be separated by a `<s>` markup.
+For licensing reasons we cannot make the datasets in the paper available. Your own data should be prepared as described below. Data should be split into `train.csv`, `val.csv` and `test.csv` files.  Each file should contain tokenized, lemmatized text and the class label. Sentences in the text should be separated by a `<s>` markup. The csv header should contain two fields `text` and `label`.
 
 Example record:
-Considering there are two classes:
+Considering there are two classes. The first field is the record text while the second field is the record label.
 
 ```
 baghdad national iraqi news agency nina the armed forces have killed dozens of terrorists including three suicide bombers during repelling an attack by daesh on gonna village in sharqat <s> a source in the defense ministry told the national iraqi news agency/ nina that daesh terrorist gangs attacked this morning the military units stationed in the district of sharqat khanokah village where they were addressed and inflicted them heavy losses killing gonna large number of the terrorist enemy including 3 suicide bombers and dismantled 20 explosive devices planted by terrorists to hinder the progress of the armed forces end,0
