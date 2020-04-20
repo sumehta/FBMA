@@ -25,10 +25,10 @@ pip install -r requirements.txt
 ```
 
 ### Dataset Prep
-For licensing reasons we cannot make the datasets in the paper available. Your own data should be prepared as described below. Data should be split into `train.csv`, `val.csv` and `test.csv` files.  Each file should contain tokenized, lemmatized text and the class label. Sentences in the text should be separated by a `<s>` markup. The csv header should contain two fields `text` and `label`.
+For licensing reasons we cannot make the datasets in the paper available. Your data must be prepared as described. Data must be split into `train.csv`, `val.csv` and `test.csv` files.  Each file must contain tokenized, lemmatized text and the class label. Sentences in the text must be separated by a `<s>` markup. The csv header must contain two fields `text` and `label`.
 
 Example record:
-Considering there are two classes. The first field is the record text while the second field is the record label.
+The first field is the record text while the second field is the record label.
 
 ```
 baghdad national iraqi news agency nina the armed forces have killed dozens of  terrorists including
