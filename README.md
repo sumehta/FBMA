@@ -68,7 +68,7 @@ data_dir should contain `train.csv`, `val.csv` and  `test.csv` files.
 
 ## Monitoring training progress
 
-You can point tensorboard to the training folder (by default it is `--train_dir=./runs`) to monitor the training process:
+You can point tensorboard to the training folder (by default it is `--log_dir=./runs`) to monitor the training process:
 
 ```
 bash
