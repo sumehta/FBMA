@@ -3,7 +3,7 @@
 Code for the paper: "[Event Detection using Hierarchical Multi-Aspect Attention](https://dl.acm.org/doi/10.1145/3308558.3313659)" by
 Sneha Mehta, Mohammad Raihanul Islam, Huzefa Rangwala, Naren Ramakrishnan.
 
-The model presented in the paper can be used for general text classification tasks, especially for large texts. Model assigns relative importances to different sentences and different weights to different words in each sentence.
+The model presented in the paper can be used for general text classification tasks, especially for long texts. Model assigns relative importances to different sentences and different weights to different words in each sentence.
 
 ### Setup
 All commands must be run from the project root. The following environment variables can be optionally defined:
