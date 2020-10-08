@@ -82,9 +82,9 @@ Running the main script will create `stats` and `output` directories. It will st
 
 
 ## References
-[1][Low Rank Factorization for Compact Multi-Head Self-Attention](https://arxiv.org/abs/1912.00835)
-[2][Event Detection Using Hierarchical Multi-Aspect Attention](http://people.cs.vt.edu/sudo777/files/p3079-mehta.pdf)
-[3][A Structured Self-attentive Sentence Embedding](https://arxiv.org/abs/1703.03130)
+[1][Low Rank Factorization for Compact Multi-Head Self-Attention](https://arxiv.org/abs/1912.00835) <br />
+[2][Event Detection Using Hierarchical Multi-Aspect Attention](http://people.cs.vt.edu/sudo777/files/p3079-mehta.pdf) <br />
+[3][A Structured Self-attentive Sentence Embedding](https://arxiv.org/abs/1703.03130) 
 
 
 ## Citing this work
