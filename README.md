@@ -89,7 +89,7 @@ Running the main script will create `stats` and `output` directories. It will st
 [1][Low Rank Factorization for Compact Multi-Head Self-Attention](https://arxiv.org/abs/1912.00835) <br />
 [2][Event Detection Using Hierarchical Multi-Aspect Attention](http://people.cs.vt.edu/sudo777/files/p3079-mehta.pdf) <br />
 [3][A Structured Self-attentive Sentence Embedding](https://arxiv.org/abs/1703.03130) <br />
-[4][A Multiple Instance Learning Framework for Identifying Key Sentences and Detecting Events] (https://people.cs.vt.edu/~ramakris/papers/lfp0927-wangA.pdf)
+[4][A Multiple Instance Learning Framework for Identifying Key Sentences and Detecting Events](https://people.cs.vt.edu/~ramakris/papers/lfp0927-wangA.pdf)
 
 
 ## Citing this work
