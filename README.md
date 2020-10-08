@@ -3,7 +3,8 @@
 Code for the paper: "[Event Detection using Hierarchical Multi-Aspect Attention](https://dl.acm.org/doi/10.1145/3308558.3313659)" by
 Sneha Mehta, Mohammad Raihanul Islam, Huzefa Rangwala, Naren Ramakrishnan.
 
-The model presented in the paper can be used for general text classification tasks, especially for long texts. Model assigns relative importances to different sentences and different weights to different words in each sentence.
+The model presented in the paper can be used for general text classification tasks, especially for long texts. Model assigns relative importance to different sentences and different weights to different words in each sentence to construct a document representation. To construct sentence representations the model proposes a new multi-head self-attention mechanism ([1,2]) which is shown to be computationally more efficient than Self-Attentive Sentence Embedding [3] and self-attention mechanism on transformers.
+
 
 ### Setup
 All commands must be run from the project root. The following environment variables can be optionally defined:
@@ -79,6 +80,11 @@ tensorboard --port 6007 --logdir ./runs
 
 Running the main script will create `stats` and `output` directories. It will store the performance of the current run inside `stats/experiment` (Note: Experiment name can be changed using the `--experiment` flag). It will create `EVAL` and `TEST` directories inside the experiment directory containing `eval.json` and `test.json`. Performance metrics of the model such as precision, recall, f1 etc. can be found inside these files.
 
+
+## References
+[1][Low Rank Factorization for Compact Multi-Head Self-Attention](https://arxiv.org/abs/1912.00835)
+[2][Event Detection Using Hierarchical Multi-Aspect Attention](http://people.cs.vt.edu/sudo777/files/p3079-mehta.pdf)
+[3][A Structured Self-attentive Sentence Embedding](https://arxiv.org/abs/1703.03130)
 
 
 ## Citing this work
