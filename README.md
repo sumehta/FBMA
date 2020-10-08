@@ -3,7 +3,11 @@
 Code for the paper: "[Event Detection using Hierarchical Multi-Aspect Attention](https://dl.acm.org/doi/10.1145/3308558.3313659)" by
 Sneha Mehta, Mohammad Raihanul Islam, Huzefa Rangwala, Naren Ramakrishnan.
 
-The model presented in the paper can be used for general text classification tasks, especially for long texts. Model assigns relative importance to different sentences and different weights to different words in each sentence to construct a document representation. To construct sentence representations the model proposes a new multi-head self-attention mechanism ([1,2]) which is shown to be computationally more efficient than Self-Attentive Sentence Embedding [3] and self-attention mechanism on transformers.
+The model presented in the paper can be used for general text classification tasks, especially for long texts and low resource settings when training simple models from scratch is more feasible than finetuning large models such as BERT. Model assigns relative importance to different sentences and different weights to different words in each sentence to construct a document representation. To construct sentence representations the model proposes a new multi-head self-attention mechanism ([1,2]) which is shown to be computationally more efficient than Self-Attentive Sentence Embedding [3] and self-attention mechanism on transformers.
+
+For the event detection task, the proposed model beats the previous state-of-the-art Multi-Instance Learning based model [4] on the datasets used in the paper.
+
+Please open an Issue if stuck!
 
 
 ### Setup
@@ -84,7 +88,8 @@ Running the main script will create `stats` and `output` directories. It will st
 ## References
 [1][Low Rank Factorization for Compact Multi-Head Self-Attention](https://arxiv.org/abs/1912.00835) <br />
 [2][Event Detection Using Hierarchical Multi-Aspect Attention](http://people.cs.vt.edu/sudo777/files/p3079-mehta.pdf) <br />
-[3][A Structured Self-attentive Sentence Embedding](https://arxiv.org/abs/1703.03130) 
+[3][A Structured Self-attentive Sentence Embedding](https://arxiv.org/abs/1703.03130) <br />
+[4][A Multiple Instance Learning Framework for Identifying Key Sentences and Detecting Events (https://people.cs.vt.edu/~ramakris/papers/lfp0927-wangA.pdf)
 
 
 ## Citing this work
