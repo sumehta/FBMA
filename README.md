@@ -3,7 +3,7 @@
 Code for the paper: "[Event Detection using Hierarchical Multi-Aspect Attention](https://dl.acm.org/doi/10.1145/3308558.3313659)" by
 Sneha Mehta, Mohammad Raihanul Islam, Huzefa Rangwala, Naren Ramakrishnan.
 
-The model presented in the paper can be used for general text classification tasks, especially for long texts and low resource settings when training simple models from scratch is more feasible than finetuning large models such as BERT. Model assigns relative importance to different sentences and different weights to different words in each sentence to construct a document representation. To construct sentence representations the model proposes a new multi-head self-attention mechanism ([1,2]) which is shown to be computationally more efficient than Self-Attentive Sentence Embedding [3] and self-attention mechanism in transformers.
+The model presented in the paper can be used for general text classification tasks, especially for long texts and low resource settings when training simple models from scratch is more feasible than finetuning large models such as BERT. Model assigns relative importance to different sentences and different weights to different words in each sentence to construct a document representation. To construct sentence representations the model proposes a new multi-head self-attention mechanism ([1,2]) which is shown to be computationally more efficient than Self-Attentive Sentence Embedding [3] and self-attention mechanism in Transformers.
 
 For the event detection task, the proposed model beats the previous state-of-the-art Multi-Instance Learning based model [4] on the datasets used in the paper.
 
